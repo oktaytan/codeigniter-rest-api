@@ -12,6 +12,10 @@ class Course_model extends CI_Model{
         return json_encode($this->db->get($this->tableName)->result());
     }
 
+    public function get_single($where = array()){
+        return json_encode($this->db->get_where($this->tableName, $where)->result());
+    }
+
     public function save($data = array()){
         $insert = $this->db->insert($this->tableName, $data);
         if($insert){

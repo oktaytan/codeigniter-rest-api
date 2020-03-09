@@ -15,6 +15,11 @@ class Api extends CI_Controller {
     public function get_all_data(){
         echo $this->course_model->get_all();
     }
+    public function get_single_data(){
+        echo $this->course_model->get_single(
+            $this->JSON_DATA
+        );
+    }
     public function save(){
         echo $this->course_model->save(
             $this->JSON_DATA
